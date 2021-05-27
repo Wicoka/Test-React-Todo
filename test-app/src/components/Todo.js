@@ -3,6 +3,7 @@ import Modal from './Modal';
 import Backdrop from './Backdrop';
 
 function Todo(props) {
+    // useState azért az állapotért felelős, amit látunk. Ezzel lehet megjeleníteni, eltünteni elementeket
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
     function deleteHandler() {
@@ -21,6 +22,7 @@ function Todo(props) {
                     Delete
                 </button>
             </div>
+            {/* Ez a Modal props.onCancel-je és a props.onConfirm-je. Ha az meghívódik benne, akkor a closeModalHandler függvény fog lefutni */}
             {modalIsOpen && <Modal onCancel={closeModalHandler} onConfirm={closeModalHandler} />}
             {modalIsOpen && <Backdrop onCancel={closeModalHandler} />}
         </div>
