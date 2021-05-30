@@ -8,15 +8,16 @@ function NewMeetupForm(props) {
     function submitHandler(event) {
         event.preventDefault();
 
+        // Form elementjei vannak itt
         const enteredTitle = titleInputRef.current.value;
 
+        // Itt létrehozok egy visszatérési object-et
         const meetupData = {
             id: Math.random(),
             title: enteredTitle
         };
 
-        console.log(meetupData);
-
+        // Itt van lényegében az Angular féle output.emit()
         props.onAddMeetup(meetupData);
     }
     return (
